@@ -73,7 +73,7 @@ router.patch('/:id', async (req, res) => {
   const { id } = req.params;
   const { name } = req.body;
 
-  if (!name !== 'undefined' && typeof name !== 'string') {
+  if (name !== 'undefined' && typeof name !== 'string') {
     return res.status(422).json({ error: 'Name must be a string if provided' });
   }
 

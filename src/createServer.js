@@ -23,7 +23,7 @@ const createServer = () => {
       await sequelize.authenticate();
       console.log('Connection to DB has been established successfully.');
 
-      await sequelize.sync({ force: true });
+      await sequelize.sync({ force: false });
       console.log('Database synchronized.');
 
       return app;

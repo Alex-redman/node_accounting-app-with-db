@@ -65,7 +65,7 @@ router.delete('/:id', async (req, res) => {
     res.sendStatus(204);
   } catch (error) {
     console.error('Error deleting user:', error);
-    res.status(500).json({ error: ' Internal server error' });
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
@@ -73,7 +73,7 @@ router.patch('/:id', async (req, res) => {
   const { id } = req.params;
   const { name } = req.body;
 
-  if (!name !== 'undefines' && typeof name !== 'string') {
+  if (!name !== 'undefined' && typeof name !== 'string') {
     return res.status(422).json({ error: 'Name must be a string if provided' });
   }
 
